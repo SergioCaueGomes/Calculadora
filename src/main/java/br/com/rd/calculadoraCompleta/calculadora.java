@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class calculadora
  */
-@WebServlet("/calculadora")
-public class calculadora extends HttpServlet {
+@WebServlet("/Calculadora")
+public class Calculadora extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public calculadora() {
+    public Calculadora() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -47,18 +47,18 @@ public class calculadora extends HttpServlet {
 			int valor2 = Integer.parseInt(request.getParameter("val2"));
 			
 			//chamada da regra de negocio
-			Calcular calc = new Calcular(valor1,valor2); 
+			Calcular calculo = new Calcular(valor1,valor2); 
 			int total;
 			
 			
 			if(request.getParameter("somar") != null) {
-				 total = calc.somar();
+				 total = calculo.somar();
 			} else if (request.getParameter("subtrair") != null) {
-				 total = calc.subtrair();
-			}else if (request.getParameter("Multi") != null) {
-				 total = calc.multiplicar();
+				 total = calculo.subtrair();
+			}else if (request.getParameter("multiplicar") != null) {
+				 total = calculo.multiplicar();
 			}else {
-				total = calc.dividir();
+				total = calculo.dividir();
 			}
 			
 			//resultado da regra de negocio
@@ -71,4 +71,4 @@ public class calculadora extends HttpServlet {
 
 }
 
-}
+
